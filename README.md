@@ -16,18 +16,28 @@
 
 ## Установка
 
-Нужен установленный [Claude Code](https://docs.claude.com/claude-code). Затем:
+Нужен установленный [Claude Code](https://docs.claude.com/claude-code) и `git`. Выполни блок под свою систему.
 
+**macOS / Linux** (Терминал):
 ```bash
-cd ~/.claude/skills && git clone https://github.com/theivansergeev/naydi-viralku найди-виралку
+mkdir -p ~/.claude/skills
+git clone https://github.com/theivansergeev/naydi-viralku ~/.claude/skills/найди-виралку
 ```
+
+**Windows** (PowerShell):
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
+git clone https://github.com/theivansergeev/naydi-viralku "$HOME\.claude\skills\найди-виралку"
+```
+
+Нет `git`? Поставь: macOS - `xcode-select --install`; Windows - [git-scm.com/download/win](https://git-scm.com/download/win) (или `winget install Git.Git`)
 
 Перезапусти Claude Code - скилл подхватится сам.
 
 Для поиска видео по YouTube нужен `yt-dlp` (без него остаётся веб-поиск):
 ```bash
-brew install yt-dlp     # macOS
-pip install -U yt-dlp   # Windows / Linux
+pip install -U yt-dlp     # Windows / Linux / macOS (универсально, нужен Python)
+brew install yt-dlp       # macOS (альтернатива, если есть Homebrew)
 ```
 
 ## Как пользоваться
